@@ -6,37 +6,14 @@ import javax.swing.JOptionPane;
 
 public class sql_database_connector extends Student{
 	
-	Connection conn = null;
 	
-	public static Connection studentConnector() {
+	public static void studentConnector() {
 		
-		try {
-			
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/j_mini_project", "root", "Balaji.mysql@28");
-			JOptionPane.showMessageDialog(null, "Connection successful");
-			return conn;
-			
-		} catch(Exception e) {
-			
-			JOptionPane.showMessageDialog(null, e);
-			return null;
-		}
+		Database_connection.DBConn();
 	}
 	
-	public static Connection staffConnector() {
+	public static void staffConnector() {
 		
-		try {
-			
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/staff", "root", "Balaji.mysql@28");
-			JOptionPane.showMessageDialog(null, "Connection successful");
-			return conn;
-			
-		} catch(Exception e) {
-			
-			JOptionPane.showMessageDialog(null, e);
-			return null;
-		}
+		Database_connection.DBConn();
 	}
 }
